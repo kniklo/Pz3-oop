@@ -10,6 +10,7 @@ using namespace std;
 //начинка котлеты сыр масло хлеб мука
 int main()
 {
+	int a;
 	Food* pA;
 	Bread bread;
 	Meat meat;
