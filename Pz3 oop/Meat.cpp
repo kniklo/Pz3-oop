@@ -1,7 +1,7 @@
 #include "Meat.h"
 #include <string>
 using namespace std;
-
+//конструктор по умолчанию
 Meat::Meat()
 {
 	_name = "";
@@ -10,6 +10,7 @@ Meat::Meat()
 	_energy100 = 100;
 	_animal = "";
 }
+//конструктор с параметрами
 Meat::Meat(string name, time_t productionDate, int expirationTime, float energy100, string animal)
 {
 	_name = name;
@@ -18,6 +19,7 @@ Meat::Meat(string name, time_t productionDate, int expirationTime, float energy1
 	_energy100 = energy100;
 	_animal = animal;
 }
+//конструктор копирования
 Meat::Meat(const Meat& from_meat)
 {
 	_name = from_meat._name;
@@ -26,7 +28,7 @@ Meat::Meat(const Meat& from_meat)
 	_energy100 = from_meat._energy100;
 	_animal = from_meat._animal;
 }
-
+//геттеры сеттеры
 void Meat::set_animal(string animal)
 {
 	_animal = animal;
@@ -35,7 +37,7 @@ string Meat::get_animal()
 {
 	return _animal;
 }
-
+// реализации перегруженных виртуальных функций
 string Meat::smell()
 {
 	string result = "Smells like meat~~~~";

@@ -1,17 +1,19 @@
 #include "Cutlet.h"
 #include <string>
 using namespace std;
-
+//конструктор по умолчанию
 Cutlet::Cutlet()
 {
 	Meat::Meat();
 	_weigth = 0;
 }
+//конструктор с параметрами
 Cutlet::Cutlet(string name, time_t productionDate, int expirationTime, float energy100, string animal, float weigth)
 {
 	Meat::Meat(name, productionDate, expirationTime, energy100, animal);
 	_weigth = weigth;
 }
+//конструктор копирования
 Cutlet::Cutlet(const Cutlet& from_cutlet)
 {
 	_name = from_cutlet._name;
@@ -21,7 +23,7 @@ Cutlet::Cutlet(const Cutlet& from_cutlet)
 	_animal = from_cutlet._animal;
 	_weigth = from_cutlet._weigth;
 }
-
+//геттеры сеттеры
 void Cutlet::set_weigth(float weigth)
 {
 	_weigth = weigth;
@@ -30,7 +32,7 @@ float Cutlet::get_weigth()
 {
 	return _weigth;
 }
-
+// реализации перегруженных виртуальных функций
 string Cutlet::smell()
 {
 	string result = "Smells like cutlet~~~~";

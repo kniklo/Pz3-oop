@@ -12,6 +12,7 @@ protected:
 	int _expirationTime;	//срок годности дней
 	float _energy100;		//энернетическая ценность 100 г еды
 public:		
+	// геттеры сеттеры
 	void set_name(string _name);
 	string get_name();
 	void set_productionDate(time_t productionDate);
@@ -24,8 +25,8 @@ public:
 	virtual string smell() = 0; //виртуальная функция - запах еды
 	virtual string recipe() = 0; //виртуальная функция - рецепт приготовления
 
-	virtual void getInfo();
-	virtual void setInfo();
+	virtual void getInfo(); //виртуальная функция получения информации об объекте
+	virtual void setInfo(); //виртуальная функция записи информации в объект
 
-	virtual void ToPrint();
+	virtual void ToPrint(); //виртуальная функция вывода названия класса
 };

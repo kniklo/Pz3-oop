@@ -2,7 +2,7 @@
 #include <string>
 #include <ctime>
 using namespace std;
-
+// конструктор по умолчанию
 Bread::Bread()
 {	
 	_name = "";
@@ -11,6 +11,7 @@ Bread::Bread()
 	_energy100 = 0;
 	_type = "";
 }
+// конструктор с параметрами
 Bread::Bread(string name, time_t productionDate, int expirationTime, float energy100, string type)
 {
 	_name = name;
@@ -19,6 +20,7 @@ Bread::Bread(string name, time_t productionDate, int expirationTime, float energ
 	_energy100 = energy100;
 	_type = type;
 }
+//конструктор копирования
 Bread::Bread(const Bread& from_bread)
 {
 	_name = from_bread._name;
@@ -27,7 +29,7 @@ Bread::Bread(const Bread& from_bread)
 	_energy100 = from_bread._energy100;
 	_type = from_bread._type;
 }
-
+// геттеры сеттеры
 void Bread::set_type(string type)
 {
 	_type = type;
@@ -36,7 +38,7 @@ string Bread::get_type()
 {
 	return _type;
 }
-
+// реализации перегруженных виртуальных функций
 string Bread::smell()
 {
 	 string result = "Smells like bread~~~~" ;

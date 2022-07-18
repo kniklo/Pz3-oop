@@ -3,6 +3,7 @@
 #include <ctime>
 #include <string>
 
+// реализации геттеров сеттеров
 void Food::set_name(string name) { _name = name; }
 string Food::get_name() { return _name; }
 void Food::set_productionDate(time_t productionDate) { _productionDate = productionDate; }
@@ -12,11 +13,13 @@ int  Food::get_expirationTime() { return _expirationTime; }
 void Food::set_energy100(float energy100) { _energy100 = energy100; }
 float  Food::get_energy100() { return _energy100; }
 
+// вывод инфо
 void Food::getInfo()
 {
 	string s = ctime(&_productionDate);
 	cout << "< " << _name << "> " << " Producted:" << s << " Energy in 100 g: " << _energy100;
 }
+//ввод инфо
 void Food::setInfo()
 {
 	time_t rawtime;
@@ -41,7 +44,7 @@ void Food::setInfo()
 	cout << "Enter energy in 100 g, kcal: ";
 	cin >> _energy100;	
 }
-
+//вывод названия класса
 void Food::ToPrint()
 {
 	cout << "FOOD\n";
