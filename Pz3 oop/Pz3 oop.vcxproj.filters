@@ -33,6 +33,9 @@
     <ClCompile Include="Cutlet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Printer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Food.h">
@@ -41,10 +44,13 @@
     <ClInclude Include="Bread.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Meat2.h">
+    <ClInclude Include="Meat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Cutlet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Printer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

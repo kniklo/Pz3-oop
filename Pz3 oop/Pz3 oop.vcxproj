@@ -143,6 +143,7 @@
     <ClCompile Include="Cutlet.cpp" />
     <ClCompile Include="Food.cpp" />
     <ClCompile Include="Meat.cpp" />
+    <ClCompile Include="Printer.cpp" />
     <ClCompile Include="Pz3 oop.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -150,7 +151,8 @@
     <ClInclude Include="Bread.h" />
     <ClInclude Include="Cutlet.h" />
     <ClInclude Include="Food.h" />
-    <ClInclude Include="Meat2.h" />
+    <ClInclude Include="Meat.h" />
+    <ClInclude Include="Printer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

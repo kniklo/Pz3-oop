@@ -1,53 +1,68 @@
 #include "Bread.h"
+#include <string>
+#include <ctime>
 using namespace std;
 
-string Bread:: GetBreadName() { return flour; }
-void Bread:: SetBreadName(string _flour) { flour = _flour; }
+Bread::Bread()
+{	
+	_name = "";
+	_productionDate = time(0);
+	_expirationTime = 0;
+	_energy100 = 0;
+	_type = "";
+}
+Bread::Bread(string name, time_t productionDate, int expirationTime, float energy100, string type)
+{
+	_name = name;
+	_productionDate = productionDate;
+	_expirationTime = expirationTime;
+	_energy100 = energy100;
+	_type = type;
+}
+Bread::Bread(const Bread& from_bread)
+{
+	_name = from_bread._name;
+	_productionDate = from_bread._productionDate;
+	_expirationTime = from_bread._expirationTime;
+	_energy100 = from_bread._energy100;
+	_type = from_bread._type;
+}
 
-string Bread::Smell() 
+void Bread::set_type(string type)
+{
+	_type = type;
+}
+string Bread::get_type()
+{
+	return _type;
+}
+
+string Bread::smell()
 {
 	 string result = "Smells like bread~~~~" ;
 	 return result;
 }
 
-string Bread::cut()
+string Bread::recipe()
 {
-	string i;
-	i = "slice";
-	return i;
+	string result = "Flour, eggs, water knead and bake";
+	return result;
 }
 
-//перегруженны оператор вывода
-ostream& operator<< (ostream& out, const Bread& bread)
+void Bread::getInfo()
 {
-	out << "< " << bread.name << "> " << " from " << bread.flour << " Production time:" << bread.productionTime<< " Eat before: " << bread.expirationDate << "\n";
-	return out;
+	Food::getInfo();
+	cout << " Type of bread is: " << _type;
 }
-//перегруженный оператор ввода
-istream& operator>> (istream& in, Bread& bread)
-{
-	cout << "Enter bread name: ";
-	cin >> bread.name;
-	cout << "Enter from what type of flour it was made: ";
-	cin >> bread.flour;
-	cout << "Enter expiration date: ";
-	cin >> bread.expirationDate;
-	return in;
-}
-/*void Bread::fillInfo(Bread b)
-{
-	cout << "Enter what type of bread do you want :" << endl;
-	cout << "1. from a flour\t2. from b flour\n";
-	int i;
-	cin >> i;
-	
-	switch (i)
-	{
-		case(1)
-			SetBreadName("a");
 
-	default:
-		break;
-	}
+void Bread::setInfo()
+{	
+	Food::setInfo();
+	cout << "Enter bread type: ";
+	cin >> _type;
 }
-*/
+
+void Bread::ToPrint()
+{
+	cout << "BREAD\n";
+}

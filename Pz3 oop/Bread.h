@@ -1,28 +1,25 @@
 #pragma once
 #include "Food.h"
+#include <ctime>
 
 class Bread : public Food
 {
 private:
-	string flour;
+	string _type;	// тип хлеба	
 
 public:
-	Bread() : flour("")
-	{
-	}
-	Bread(string _name, string prTime, string expDate, string _flour) : Food( _name, prTime, expDate)
-	{
-		flour = _flour;
-	}
-	Bread(const Bread& from_bread) : flour(from_bread.flour)
-	{
-	}
-	string GetBreadName();
-	void SetBreadName(string _flour);
-
-	string Smell() override;
-	string cut() override;
+	Bread();	
+	Bread(string name, time_t productionDate, int expirationTime, float energy100, string type);	
+	Bread(const Bread& from_bread);
 	
-	friend ostream& operator<< (ostream& out, const Bread& breadt);
-	friend istream& operator>> (istream& in, Bread& bread);
+	void set_type(string _type);
+	string get_type();
+
+	virtual string smell() override;
+	virtual string recipe() override;
+	
+	virtual void getInfo() override;
+	virtual void setInfo() override;
+
+	virtual void ToPrint() override;
 };

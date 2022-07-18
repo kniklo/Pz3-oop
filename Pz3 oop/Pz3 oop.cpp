@@ -1,32 +1,48 @@
-// Pz3 oop.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 #include "Food.h"
 #include "Bread.h"
-#include "Meat2.h"
+#include "Meat.h"
 #include "Cutlet.h"
+#include "Printer.h"
 using namespace std;
 //начинка котлеты сыр масло хлеб мука
 int main()
-{
-	int a;
-	Food* pA;
-	Bread bread;
-	Meat meat;
-	Cutlet cut;
+{	
+	Printer pr;
+	Bread b1;	
+	Meat m1;
+	Cutlet c1;
+	Food* p;
 
-	pA = &bread;
-	cout << pA->Smell() << endl;
+	pr.Printing(&b1);
+	b1.setInfo();
+	cout << "-----------------\n";
+	b1.getInfo();
+	cout << endl;
+	p = &b1;
+	cout << p->smell() << endl;
+	cout << p->recipe() << endl;
+	cout << endl;
+	
+	pr.Printing(&m1);
+	m1.setInfo();
+	cout << "-----------------\n";
+	m1.getInfo();
+	cout << endl;
+	p = &m1;
+	cout << p->smell() << endl;
+	cout << p->recipe() << endl;
+	cout << endl;
+
+	pr.Printing(&c1);
+	c1.setInfo();
+	cout << "-----------------\n";
+	c1.getInfo();
+	cout << endl;
+	p = &c1;
+	cout << p->smell() << endl;
+	cout << p->recipe() << endl;
+	cout << endl;	
+	getchar();
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file

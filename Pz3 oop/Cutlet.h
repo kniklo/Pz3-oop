@@ -1,23 +1,24 @@
 #pragma once
-#include "Meat2.h"
+#include "Meat.h"
 
 class Cutlet : public Meat
 {
 private:
-	string cutletType;
-public:
-	Cutlet() : cutletType("")
-	{
-	}
-	Cutlet(string _name, string prTime, string expDate, string _flour, string _meatType, string _stepProzarki, string _cutletType) : Meat( _name,  prTime,  expDate,  _flour,  _meatType,  _stepProzarki)
-	{
-		cutletType = _cutletType;
-	}
-	Cutlet(const Cutlet& from_cutlet) : cutletType(from_cutlet.cutletType)
-	{
-	}
-	string GetCutletName();
-	void SetCutletName(string _cutletType);
+	float _weigth;	// вес котлеты, г
 
-	string Smell()override; 
+public:
+	Cutlet();
+	Cutlet(string name, time_t productionDate, int expirationTime, float energy100, string animal, float weigth);
+	Cutlet(const Cutlet& from_cutlet);
+
+	void set_weigth(float _weigth);
+	float get_weigth();
+
+	virtual string smell() override;
+	virtual string recipe() override;
+
+	virtual void getInfo() override;
+	virtual void setInfo() override;
+
+	virtual void ToPrint() override;
 };
